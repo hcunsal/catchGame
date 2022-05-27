@@ -6,13 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="152dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="271dp"
+        android:fontFamily="serif-monospace"
+        android:onClick="exit"
+        android:text="EXIT"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
 
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="152dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginBottom="19dp"
+        android:fontFamily="serif-monospace"
+        android:onClick="play"
+        android:text="PLAY"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/exitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
