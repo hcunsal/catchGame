@@ -85,7 +85,7 @@ class GameActivity : AppCompatActivity() {
                 var randomIndex = random.nextInt(9)
 
                 characterArray[randomIndex].visibility = View.VISIBLE
-                handler.postDelayed(runnable, 500)
+                handler.postDelayed(runnable, 300)
             }
 
         }
