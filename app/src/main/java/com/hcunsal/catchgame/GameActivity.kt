@@ -25,7 +25,7 @@ class GameActivity : AppCompatActivity() {
         setContentView(R.layout.activity_game)
         val intent = intent
         Toast.makeText(applicationContext, "Game Started", Toast.LENGTH_LONG).show()
-        
+
         characterArray.add(character)
         characterArray.add(character1)
         characterArray.add(character2)

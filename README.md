@@ -1,0 +1,2 @@
+## Catch Game
+/ kotlinMemory repo'sunda bulunan catchGame projesinin ekleme yapılarak ilerletilmiş halidir. Basit bir ekranda çıkan karakteri yakalama oyunudur. Verilen süre içerisinde en fazla skor elde edilmeye çalışılır.
