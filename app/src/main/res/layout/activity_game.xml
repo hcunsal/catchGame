@@ -6,47 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
+
     <TextView
-        android:id="@+id/scoreText"
+        android:id="@+id/hScoreText"
         android:layout_width="229dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="459dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="Score: 0"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="High Score: 0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timeText" />
 
     <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="229dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginBottom="70dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Score: 0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/timeText"
         android:layout_width="214dp"
         android:layout_height="0dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="102dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="56dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="Time: 20"
         android:textAllCaps="false"
         android:textSize="44sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintBottom_toTopOf="@+id/hScoreText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeText">
+        app:layout_constraintTop_toBottomOf="@+id/scoreText">
 
 
         <ImageView

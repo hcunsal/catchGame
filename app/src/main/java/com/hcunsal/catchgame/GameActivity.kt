@@ -1,5 +1,6 @@
 package com.hcunsal.catchgame
 
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -16,15 +17,27 @@ import kotlin.collections.ArrayList
 class GameActivity : AppCompatActivity() {
 
     var score = 0
+    var dataScore = 0
     var characterArray = ArrayList<ImageView>()
     var runnable = java.lang.Runnable { }
     var handler : Handler = Handler(Looper.getMainLooper())
+    var randomArray = arrayOf(7,1,5,4,8,0,2,6,3)
+    lateinit var sharedPreferences : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+        sharedPreferences = this.getSharedPreferences("com.hcunsal.catchgame", MODE_PRIVATE)
+        dataScore = sharedPreferences.getInt("highscore", -1)
+
         val intent = intent
         Toast.makeText(applicationContext, "Game Started", Toast.LENGTH_LONG).show()
+
+        if(dataScore != -1) run {
+            hScoreText.text = "High Score: $dataScore"
+        }
+
+
 
         characterArray.add(character)
         characterArray.add(character1)
@@ -44,6 +57,12 @@ class GameActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 handler.removeCallbacks(runnable)
+
+                if(score > dataScore){
+                    dataScore = score
+                    sharedPreferences.edit().putInt("highscore", dataScore).apply()
+                }
+
                 val alert = AlertDialog.Builder(this@GameActivity)
                 alert.setTitle("Game Over")
                 alert.setMessage("Are you restart game?")
@@ -83,9 +102,11 @@ class GameActivity : AppCompatActivity() {
 
                 var random = Random()
                 var randomIndex = random.nextInt(9)
+                // var randomIndex2 = random.nextInt(9)
 
-                characterArray[randomIndex].visibility = View.VISIBLE
-                handler.postDelayed(runnable, 300)
+                characterArray[randomArray[randomIndex]].visibility = View.VISIBLE
+                handler.postDelayed(runnable, 350)
+
             }
 
         }
